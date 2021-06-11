@@ -1,0 +1,305 @@
+
+<h4 class="invoice">Invoice Details </h4>
+<div class="whole_content" style="background-color: white; overflow: hidden;">
+  <div class="vl"></div>
+  <div class="table">
+    <div class="header">
+    </div>
+    <br>
+    <div class="">
+      <div class="rightbox">
+        <h4 class="Workflow_heading" style="background-color: #d9edf787;/* width: 51%; */margin-left: 12%;">
+          <strong style="padding-left: 5%;">WorkFlow</strong>
+        </h4>
+
+        <div class="rb-container">
+          <ul class="rb" style="width: max-content;">
+            <li class="rb-item" ng-repeat="itembx">
+              <h5 class="node grey" style="font-weight: 600; font-size:16px">Initiator</h5>
+              <p style="font-size: 14px;color: #808080f0;">15 Aug 2018 | 05.00 PM</p>
+              <p class="distr" style="font-size: 15px;color: #0D0C0F;">Vendor | 1999579</p>
+              <a href="#">abc@#tcs.com </a><br>
+              <span class="badge badge-success" style="background-color: #2CB712;">SUCCESS</span>
+
+            </li>
+            <li class="rb-item" ng-repeat="itembx">
+              <h5 class="node grey" style="font-size: 16px;">Accommodation Bill <br> Approving Officer</h5>
+              <p style="font-size: 14px;color: #808080f0;">15 Aug 2018 | 05.00 PM (1 Day)</p>
+              <p class="distr" style="font-size: 15px;color: #0D0C0F;">Vendor | 1999579</p>
+              <a href="#">Xyz@tcs.com </a><br>
+              <span class="badge badge-success" style="background-color: #2CB712;">APPROVED</span>
+
+            </li>
+
+            <li class="rb-item" ng-repeat="itembx">
+              <h5 class="node grey" style="font-size: 16px;">Accommodation Bill <br> Reviewing Officer</h5>
+              <p style="font-size: 14px;color: #808080f0;">16 Aug 2018 | 05.00 PM (2 Day)</p>
+              <p class="distr" style="font-size: 15px;color: #0D0C0F;">Vendor | 1999579</p>
+              <a href="#">asdf@tcs.com </a><br>
+              <span class="badge badge-success" style="background-color: #2CB712;">REQUEST REVIEWED</span>
+
+            </li>
+
+
+            <li class="rb-item" ng-repeat="itembx" style="left:3px">
+              <div class="container" style=" left: 5%;top: -32%;position: absolute;">
+                <h5 class="node grey" style="font-size: 16px;">Finance Team</h5>
+                <p style="font-size: 14px;color: #808080f0;">18 Aug 2018 | 04.00 PM (2 hours)</p>
+                <p class="distr" style="font-size: 15px;color: #0D0C0F;">Vendor | 1999579</p>
+                <a href="#">asdf@tcs.com </a><br>
+                <span class="badge badge-success" style="background-color: #FD941A;">PENDING FOR PAYMENT</span>
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <table width="50%;" class="sepratetable">
+    <tr>
+      <th>Invoice Date</th>
+      <th>Booking ID</th>
+      <th>Travel Req No</th>
+      <th>Swon No</th>
+    </tr>
+    <tr>
+      <td>{{invoice[0][3]}}</td>
+     <td>{{invoice[0][1]}}</td>
+     <td>{{invoice[0][9]}}</td>
+     <td>{{invoice[0][7]}}</td>
+    </tr>
+    <tr>
+      <th>Guest Name</th>
+      <th>Room Type</th>
+      <th colspan="2">Billing Address</th>
+    </tr>
+    <tr>
+      <td>{{invoice[0][2]}}</td>
+      <td>{{invoice[0][5]}}</td>
+    <td colspan="2" rowspan="2">{{invoice[0][13]}}</td>
+    </tr>
+
+  </table>
+
+  <br><br>
+  <table width="50%;" class="collapsetable">
+    <tr>
+      <th colspan="2" class="selected margin-10">Booking Date</th>
+      <th colspan="2" class="selected">Booking Duration</th>
+    </tr>
+    <tr>
+      <td colspan="2" class="selected margin-10">{{invoice[0][3]}}</td>
+      <td colspan="2" class="selected">1 Day</td>
+    </tr>
+    <tr>
+      <th colspan="2" class="selected margin-10">Checkin and Checkout Time</th>
+      <th colspan="2" class="selected">Stay Duration</th>
+    </tr>
+    <tr>
+  <td colspan="2" class="selected margin-10">{{invoice[0][6]}}</td>
+  <td colspan="2" class="selected">{{invoice[0][6]}}</td>
+    </tr>
+  </table>
+
+  <br><br>
+  <table width="50%;" class="pdf_details_top">
+    <tr class="pdf_details_tr">
+      <th class="pdf_details_th" colspan="2"><img style="float: left;padding: 12px;margin: 12px;" src="assets/abc.png"
+          width="100px" height="120px">Attached Invoice<br><a style="text-decoration: none; font-weight: normal;"
+          href="https://eforms.com/images/2016/10/hotel-invoice-template.png" download>invoice.pdf</a>
+      </th>
+      <th class="pdf_details_th" colspan="2">Booking Comments<br>
+        <p style="font-weight: normal;">Booking Comments will display here</p>
+      </th>
+    </tr>
+  </table>
+
+  <br><br>
+  <table width="50%;" class="collapsetable">
+    <tr>
+      <th class="newtable"></th>
+      <th class="newtable">Amount</th>
+      <th class="newtable">CGST</th>
+      <th class="newtable">SGST</th>
+      <th class="newtable">Total</th>
+    </tr>
+    <tr>
+      <td class="newtable">Room Rent (18%)</td>
+      <th class="newtable">{{invoice[0][12]}}</th>
+      <th class="newtable">{{invoice[0][15]}}</th>
+      <th class="newtable">{{invoice[0][16]}}</th>
+      <th class="newtable">2134</th>
+    </tr>
+    <tr>
+      <td class="newtable">Food Bills (18%)</td>
+      <th class="newtable">600.00</th>
+      <th class="newtable">69.00</th>
+      <th class="newtable">60.00</th>
+      <th class="newtable">660.00</th>
+    </tr>
+    <tr>
+      <td class="newtable">Other (12%)</td>
+      <td class="newtable"> - </td>
+      <td class="newtable"> - </td>
+      <td class="newtable"> - </td>
+      <td class="newtable"> - </td>
+    </tr>
+    <tr>
+      <th colspan="4" class="newtable1">Discount/Voucher/Coupon<br>
+        <p style="margin: 0px;color: darkgreen;font-weight: normal;">SUMMEROFFER 10% Coupon Applied</p>
+      </th>
+      <th class="newtable1">-300.00</th>
+    </tr>
+    <tr>
+      <th colspan="4" class="newtable1">Net total</th>
+      <th class="newtable1">1289.00</th>
+    </tr>
+    <tr>
+      <th colspan="4" class="newtable1">TCS Cost<br></th>
+      <th class="newtable1">1080.00</th>
+    </tr>
+  </table>
+
+  <hr>
+ <!-- <app-button-pannel></app-button-pannel> -->
+ <div class="row">
+   <div class="flex-container col-xs-12">
+
+     <div class="col-1 col-sm-1 col-md-1">
+       <form>
+         <button (click)="onClickCancel()" type="button" class="btn btn-default">
+           Cancel
+         </button>
+       </form>
+     </div>
+
+     <div class="col-1 col-sm-1 col-md-3">
+       <form>
+         <button type="button" class="btn btn-primary" (click)="openChat()">
+           Seek Clarification
+         </button>
+       </form>
+     </div>
+
+     <div class="col-2 col-sm-2 col-md-1 ">
+       <form>
+         <button type="button" class="btn btn-primary" (click)="showPopup=true" data-toggle="modal"
+           data-target="#myModal">
+           Approve
+         </button>
+       </form>
+     </div>
+
+     <div class="col-1 col-sm-1 col-md-1">
+       <form>
+         <button type="button" class="btn btn-primary" (click)="showPopups=true" data-toggle="modal"
+           data-target="#myModals">
+           Reject
+         </button>
+       </form>
+     </div>
+   </div>
+ </div>
+ <br>
+
+ <!--Approve popup -->
+ <div class="modal" id="myModal" [ngClass]="{'show':showPopup}">
+   <div class="modal-dialog " style="max-width: 25%;">
+     <div class="modal-content  ">
+
+       <div class="modal-header">
+         <h4 class="modal-title">Approval Remark</h4>
+       </div>
+
+       <div class="modal-body custom">
+         <b> Please select reason for Approval</b>
+         <form id="updateeventsform2" name="myform" class="form-horizontal">
+
+           <div class="form-group">
+
+             <div class="col-sm-10">
+               <select [(ngModel)]="remarks" class="form-control" id="remark" name="newremark"
+                 onchange="if (this.value=='other')
+             {
+               this.form['other'].style.visibility='visible'
+             }
+             else 
+             {
+               this.form['other'].style.visibility='hidden'
+             };">
+
+
+                 <option value="remark 1">Select</option>
+                 <option value="All details are correct">Remark text 1</option>
+                 <option value="Amount is payble">Remark text 2</option>
+                 <option value="other">Other</option>
+               </select>
+             </div>
+           </div>
+
+           <div class="form-group">
+             <div class="col-sm-10">
+               <textarea class="form-control" [(ngModel)]="remarks" id="textarea1" name="other"
+                 style="visibility:hidden;"
+                 placeholder="Enter your remark"></textarea>
+               <!--<input type="text" id="text1" name="other" style="visibility:hidden;" placeholder="enter your remark"/>-->
+             </div>
+           </div>
+         </form>
+
+       </div>
+
+       <div class="modal-footer">
+         <button type="button" class="btn btn-default" (click)="showPopup = false" data-dismiss="modal">Cancel</button>
+         <button (click)="onClickApprove()" type="button" class="btn btn-primary" data-dismiss="modal">Submit</button>
+       </div>
+     </div>
+   </div>
+ </div>
+
+
+ <!--Reject popup-->
+ <div class="modal " id="myModals" [ngClass]="{'show':showPopups}">
+   <div class="modal-dialog " style="max-width: 25%;">
+     <div class="modal-content  ">
+
+       <div class="modal-header">
+         <h4 class="modal-title">Rejection Remark</h4>
+       </div>
+
+       <div class="modal-body custom">
+         <b> Reason for Rejection</b>
+         <form id="updateeventsform2" class="form-horizontal">
+
+           <div class="form-group">
+             <div class="col-sm-10">
+               <textarea class="form-control" id="textarea" placeholder="Enter your reason"></textarea>
+               <!--<input type="text" class="form-control"
+                id="remark1" name ="remark" placeholder="Enter your remark">-->
+             </div>
+           </div>
+         </form>
+
+       </div>
+
+       <div class="modal-footer">
+         <button type="button" class="btn btn-default" (click)="showPopups = false" data-dismiss="modal">Cancel</button>
+         <button (click)="onClickReject()" type="button" class="btn btn-primary" data-dismiss="modal">Submit</button>
+       </div>
+     </div>
+   </div>
+ </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p class="tata_footer"><span>TATA</span> CONSULTANCY SERVICES <span
+        style="padding-left: 740px; font-weight:normal;">Ultimatix Release ver. 14.9.0-91607</span></p>
+    <p class="copyright">Copyright @2021 Tata Consultancy Services | About TCS | www.tcs.com | TATA Group
+      <span style="padding-left: 400px; font-size: 12px; font-weight: normal;">Terms of Use | Browser and Display
+        Compatibility </span></p>
+
+  </div>
+</footer>

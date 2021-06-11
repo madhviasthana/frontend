@@ -1,0 +1,169 @@
+<h3 class="page-heading" style="font-size: 15px;">
+  My WorkList
+</h3>
+
+<!-- <div class="row">
+  <h4 style="padding-left: 20px; font-size: 15px;"><b>Search Filter</b></h4>
+
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group" style="padding-left: 20px;">
+      <table class="table-borderless">
+        <thead>
+          <tr>
+            <th scope="col"><label for="invoice_date">Stay Date From</label></th>
+            <th scope="col"><label for="invoice_end">Stay Date To</label></th>
+            <th scope="col"><label for="city">City</label></th>
+            <th scope="col"><label for="hotel_name">Hotel Name</label></th>
+            <th scope="col"><label for="inst">Billing Instruction</label></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><input type="date" id="invoice_date" class="form-contol" value="Select" placeholder="Select"
+                [(ngModel)]="filter2.startDate" name="startDate"></td>
+            <td><input type="date" id="invoice_date" class="form-contol" value="Select" placeholder="Select"
+                [(ngModel)]="filter2.endDate" name="endDate"></td>
+            <td><input type="text" id="city" class="form-contol" placeholder="Select" [(ngModel)]="filter1.cityName"
+                name="city"></td>
+            <td><input type="text" id="hotel_name" class="form-contol" placeholder="Select"
+                [(ngModel)]="filter1.hotelName" name="city"></td>
+
+            <td style="padding-left: 17px;"><select type="text" onclick="disableBill()" id="instruct"
+                class="form-contol billing" style="width: 130px; height: 25px; ">
+                <option selected disabled>Select</option>
+                <option *ngFor="let bill of bills " [value]=" bill"> {{bill}}</option>
+              </select></td>
+
+            <td><button class="btn btn-primary" type="submit">Apply</button></td>
+          </tr>
+
+        </tbody>
+      </table>
+
+
+    </div>
+  </form>
+</div> 
+ <app-filter-list1 [data]='filteredData1'></app-filter-list1> -->
+
+
+
+
+
+<!--Code 2-->
+<!-- <div class="row">
+  <h4 style="padding-left: 20px; font-size: 15px;"><b>Search Filter</b></h4>
+
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group" style="padding-left: 20px;">
+      <table class="table-borderless">
+        <thead>
+          <tr>
+            <th scope="col"><label for="invoice_date">Stay Date From</label></th>
+            <th scope="col"><label for="invoice_end">Stay Date To</label></th>
+            <th scope="col"><label for="city">City</label></th>
+            <th scope="col"><label for="hotel_name">Hotel Name</label></th>
+            <th scope="col"><label for="inst">Billing Instruction</label></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><input type="date" id="invoice_date" class="form-contol" value="Select" placeholder="Select"
+                [(ngModel)]="filter2.startDate" name="startDate"></td>
+            <td><input type="date" id="invoice_date" class="form-contol" value="Select" placeholder="Select"
+                [(ngModel)]="filter2.endDate" name="endDate"></td>
+          <td>
+            <select id="department" (change)="changedata($event)" [(ngModel)]="department" class="form-control">
+              <option *ngFor="let dept of departments" [value]="dept.id">
+                {{dept.name}}
+              </option>
+            </select>
+          </td>
+          <td>
+            <select id="emp" class="form-control">
+              <option *ngFor="let empobj of finaldata">
+                {{empobj.empname}}
+              </option>
+            </select>
+          </td>
+                
+            <td style="padding-left: 17px;"><select type="text" onclick="disableBill()" id="instruct"
+                class="form-contol billing" style="width: 130px; height: 25px; ">
+                <option selected disabled>Select</option>
+                <option *ngFor="let bill of bills " [value]=" bill"> {{bill}}</option>
+              </select></td>
+             
+            <td><button class="btn btn-primary" type="submit">Apply</button></td>
+          </tr>
+
+        </tbody>
+      </table>
+
+
+    </div>
+  </form>
+</div> -->
+
+
+<!--CODE 3-->
+<div class="row">
+  <h4 style="padding-left: 20px; font-size: 15px;"><b>Search Filter</b></h4>
+
+   <form (ngSubmit)="onSubmit()">
+  <!-- <form> -->
+    <div class="form-group" style="padding-left: 20px;">
+      <table class="table-borderless">
+        <thead>
+          <tr>
+            <th scope="col"><label for="invoice_date">Stay Date From</label></th>
+            <th scope="col"><label for="invoice_date1">Stay Date To</label></th>
+            <th scope="col"><label for="city">City</label></th>
+            <th scope="col"><label for="hotel_name" style="padding-left: 16px;">Hotel Name</label></th>
+            <th scope="col"><label for="instruct" style="padding-left: 16px;">Billing Instruction</label></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><input onclick="disableDate()" type="date" id="invoice_date" [(ngModel)]="filter2.startDate"
+                [ngModelOptions]="{standalone: true}"
+                class="form-contol datefrom" value="Select"
+                placeholder="Select">
+            </td>
+
+            <td><input onclick="disableDate1()" type="date" id="invoice_date1" [(ngModel)]="filter2.endDate"
+                [ngModelOptions]="{standalone: true}"
+                class="form-contol dateto" value="Select"
+                placeholder="Select">
+            </td>
+
+            <td> <select id="city" name="city" onclick="disableCity()" style="width: 130px; height: 25px; padding-right: 10px;"
+                class="form-contol city" [(ngModel)]="filter1.cityName" [ngModelOptions]="{standalone: true}"
+                (change)="updateHotels()">
+                <option selected disabled>Select</option>
+                <option *ngFor="let city of cities" [value]="city">{{city}}</option>
+              </select>
+            </td>
+            <td style="padding-left: 16px;"> <select id="hotel_name"   onclick="disableHotel()"    (change)="selectedHotel($event)"
+                style="width:130px; height: 25px ; padding-right: 50px;" class="form-contol hotel" >
+                <option selected disabled>Select</option>
+                <option *ngFor="let hotel of hotels" [value]="hotel" >{{hotel}}</option>
+              </select>
+            </td>
+            <td style="padding-left: 17px;"><select type="text" onclick="disableBill()" id="instruct"
+                class="form-contol billing" style="width: 130px; height: 25px; ">
+                <option selected disabled>Select</option>
+                <option *ngFor="let bill of bills " [value]=" bill"> {{bill}}</option>
+              </select></td>
+            <td style="padding-left: 16px;"><button class="btn btn-primary" type="submit">Apply</button></td>
+            <!-- <td style="padding-left: 16px;"><button class="btn btn-danger" type="button" onclick="myFunction()"
+                value="Reset">Reset</button></td>  -->
+
+          </tr>
+
+        </tbody>
+      </table>
+
+
+    </div>
+  </form>
+</div>

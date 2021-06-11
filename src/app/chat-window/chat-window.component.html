@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./chat-window.component.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+
+<div class="navBar">
+
+<span id="firstheading">Seek Clarification</span>
+<span id="closeSymbol" onclick="closeChat()">&#x2715;</span>
+
+</div>
+
+<div id="chatSpace">
+    <img src="../../assets/chat-removebg-preview.png" height="200" width="200">
+    <h1>Start Conversation</h1>
+    <p>Please type your message below to start the conversation.</p>
+
+</div>
+
+<footer>
+
+<div id="footerView">
+
+    <!-- 
+
+
+    </span> -->
+
+    <!------------Input text-------->
+    <!-- <div class="containerClip"> -->
+    <label for="upload">
+        <span><i id="attachment" class="fa fa-paperclip" style="font-size:20px"></i></span>
+        <input type="file" id="upload" style="display:none">
+  </label>
+<!-- </div> -->
+
+    <!-- <span><i id="attachment" class="fa fa-paperclip" style="font-size:30px"><input type="file" ></i></span> -->
+    <!-- <form id="inputField"> -->
+        <input type="text" placeholder="Type your message here......." >
+
+    <!-- </form> -->
+   <span id="sendMessage"> 		<i class="fa fa-send" style="font-size:20px"></i>
+   </span>
+
+
+</div>
+
+</footer>
+
+
+</div>
+
+<!-- <div class="foam" id="demo" style="left: 10px;">
+    <p id="head"></p>
+    <form class="foam" onsubmit='return Validation()'>
+      <label style="background-color: lightgray;color: black;">Invoice Date:</label><input id='firstname' type='text' style="width:150px;height:20px" onblur="inputAlphabet(document.getElementById('firstname'),'please fill the field')">
+      <p id="p1"></p>
+      <label style="background-color: lightgray;color: black;">Invoice  no:</label><input id='no' type='text' style="width:150px;padding-left: 10px;" onblur="validNo(document.getElementById('no'),'please fill the field')">
+      <p id="p7"></p>
+    </form>
+</div> -->
+
+<script>
+
+$('#closeSymbol #container').hide();
+
+</script>
+
+
+</body>
+</html>

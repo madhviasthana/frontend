@@ -1,0 +1,75 @@
+<!-- <app-filter></app-filter>
+<div>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Invoice_No</th>
+        <th>Invoice_Date</th>
+        <th>Booking_Id</th>
+        <th>Travel_Request_Number</th>
+        <th>Guest_Name</th>
+        <th>Room_Type</th>
+        <th>Stay_Duration</th>
+        <th>Tcs_Cost</th>
+        <th>Invoice_Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let invoice of filteredInvoice2">
+        <td><a href="javascript:void(0)" (click)="onclick(invoice.invoiceNo)">{{invoice.invoiceNo}}</a></td>
+        <td>{{invoice.invoiceDate}}</td>
+        <td>{{invoice.bookingId}}</td>
+        <td>{{invoice.travelReqNo}}</td>
+        <td>{{invoice.guestName}}</td>
+        <td>{{invoice.roomType}}</td>
+        <td>{{invoice.stayDuration}}</td>
+        <td>{{invoice.tcsCost}}</td>
+        <td>{{invoice.invoiceStatus}}</td>
+
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+<app-footer></app-footer> -->
+<app-filter></app-filter>
+<div class="Container-fluid">
+  <div class="Container" style="margin-left: 20px;">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Invoice Number</th>
+          <th>Invoice Date</th>
+          <th>Booking Id</th>
+          <th>Travel Request No</th>
+          <th>Guest Name</th>
+          <th>Room Type</th>
+          <th>Stay Duration</th>
+          <th>TCS Cost</th>
+          <th>Invoice Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="down_tr" *ngFor="let invoice of filteredInvoice2 | paginate:{itemsPerPage: 5, currentPage:p}">
+          <td><a href="javascript:void(0)" (click)="onclick(invoice.invoiceNo)">{{invoice.invoiceNo}}</a></td>
+          <td>{{invoice.invoiceDate}}</td>
+          <td>{{invoice.bookingId}}</td>
+          <td>{{invoice.travelReqNo}}</td>
+          <td>{{invoice.guestName}}</td>
+          <td>{{invoice.roomType}}</td>
+          <td>{{invoice.stayDuration}}</td>
+          <td>{{invoice.tcsCost}}</td>
+          <td>{{invoice.invoiceStatus}}</td>
+
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="page" style="position: fixed;">
+  <pagination-controls (pageChange)="p=$event"></pagination-controls>
+</div>
+
+<app-footer></app-footer>
+
