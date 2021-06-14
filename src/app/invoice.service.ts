@@ -1,9 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Filter1 } from './filter1';
 import { Filter2 } from './filter2';
-import { Invoice } from './invoice'
+import { Invoice } from './invoice';
+import { User } from './chat-window/chatmodel';
+
+
 
 @Injectable({
   providedIn: 'root'
@@ -21,6 +25,16 @@ export class InvoiceService {
     return this.httpClient.post(`${this.baseURL}/invoice-update/?invoiceNo=${id}&remark=${remarks}`, null);
   }
 
+  
+  sendMessage(chatMessage:User) {
+    console.log("print message");
+    return  this.httpClient.post<any>(this.baseURL+"/message", chatMessage).subscribe(
+      res => {
+        console.log(res);
+      });
+
+
+  }
  
   getFilteredList1(filter1:Filter1):Observable<Invoice[]>
   {

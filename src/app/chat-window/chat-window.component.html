@@ -31,29 +31,34 @@
 
 <div id="footerView">
 
-    <!-- 
+<!------------------------Chat Window--------------------------------------->
 
 
-    </span> -->
+        <form (ngSubmit)="f()">
 
-    <!------------Input text-------->
-    <!-- <div class="containerClip"> -->
     <label for="upload">
         <span><i id="attachment" class="fa fa-paperclip" style="font-size:20px"></i></span>
-        <input type="file" id="upload" style="display:none">
+     <input type="file" id="upload" style="display:none">
   </label>
-<!-- </div> -->
 
-    <!-- <span><i id="attachment" class="fa fa-paperclip" style="font-size:30px"><input type="file" ></i></span> -->
-    <!-- <form id="inputField"> -->
-        <input type="text" placeholder="Type your message here......." >
+  <!-- [(ngModel)]="UserModel.DocFile" -->
 
-    <!-- </form> -->
-   <span id="sendMessage"> 		<i class="fa fa-send" style="font-size:20px"></i>
+   <input type="text" [(ngModel)]="UserModel.chatMessage" name="chatMessage" id="chatMessage" placeholder="Type your message here......." >
+
+   <span id="sendMessage"><i class="fa fa-send" style="font-size:20px"></i>
+    <!-- <input type="submit"  (ngModel)="UserModel.ChatContent" id="sendMessage" style="display:none"  onClick="f()"> -->
+
+
+<button type="submit" value="Submit" id="sendMessage" >Submit</button>
+
+<!-- (click)="f()" -->
    </span>
 
+</form>
 
 </div>
+
+<!-----------------------------------------Footer--------------------------------------->
 
 </footer>
 

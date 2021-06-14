@@ -3,6 +3,9 @@ import { Invoice } from '../invoice'
 import { InvoiceService } from '../invoice.service';
 import { Router } from '@angular/router';
 import { NgxPaginationModule } from 'ngx-pagination';
+import {User} from "./chatmodel";
+import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+
 
 @Component({
   selector: 'app-chat-window',
@@ -12,23 +15,24 @@ import { NgxPaginationModule } from 'ngx-pagination';
 
 
 export class ChatWindowComponent implements OnInit {
+  UserModel:User=new User();
 
-  chats!:Invoice[];
-p=1;
   constructor(private router: Router, private invoiceService: InvoiceService) { }
 
   ngOnInit(): void {
   }
 
-  getMessage() {
-    console.log("Message Recieved")
-
-    this.chats = this.invoiceService.retrievePassedObject();
-    console.log("Message passed")
-
-    console.log(this.chats)
-
+  
+  f(){
+    console.log("check");
+    console.log(this.UserModel);
+      this.invoiceService.sendMessage(this.UserModel); 
   }
+
+  
+ 
+
+  
   // onclick(id: number) {
   //   this.router.navigate(['/invoice-details', id]);
   //   console.log(id);

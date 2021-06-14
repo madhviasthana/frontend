@@ -38,7 +38,9 @@ import { ChatWindowComponent } from './chat-window/chat-window.component';
     HttpClientModule,
     NgxPaginationModule,
     BrowserAnimationsModule,
-    MatDialogModule
+    MatDialogModule,
+    FormsModule,  
+ReactiveFormsModule  
 
   ],
   providers: [],
