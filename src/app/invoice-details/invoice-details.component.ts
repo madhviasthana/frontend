@@ -45,8 +45,13 @@ export class InvoiceDetailsComponent implements OnInit {
     let dialogRef = this.dialog.open(ChatWindowComponent, {
       width: '80%',
       
-    });
+    });    
+    
+    
+
 }
+
+
 
 
 

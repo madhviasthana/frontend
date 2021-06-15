@@ -16,15 +16,17 @@
 <div class="navBar">
 
 <span id="firstheading">Seek Clarification</span>
-<span id="closeSymbol" onclick="closeChat()">&#x2715;</span>
-
+<form>
+<button  class="btn btn-secondary" id="closeSymbol" (click)='logOut()'>&#x2715;</button>
+</form>
 </div>
 
 <div id="chatSpace">
-    <img src="../../assets/chat-removebg-preview.png" height="200" width="200">
-    <h1>Start Conversation</h1>
-    <p>Please type your message below to start the conversation.</p>
-
+    <div id="chatHidden">
+    <img class="hiddenclass" id="chatImage" src="../../assets/chat-removebg-preview.png" height="200" width="200">
+    <h1 class="hiddenclass" id="chatContentHead">Start Conversation</h1>
+    <p class="hiddenclass" id="chatContentContent">Please type your message below to start the conversation.</p>
+</div>
 </div>
 
 <footer>
@@ -34,7 +36,7 @@
 <!------------------------Chat Window--------------------------------------->
 
 
-        <form (ngSubmit)="f()">
+        <form  id="myForm" (ngSubmit)="f()">
 
     <label for="upload">
         <span><i id="attachment" class="fa fa-paperclip" style="font-size:20px"></i></span>
@@ -45,14 +47,14 @@
 
    <input type="text" [(ngModel)]="UserModel.chatMessage" name="chatMessage" id="chatMessage" placeholder="Type your message here......." >
 
-   <span id="sendMessage"><i class="fa fa-send" style="font-size:20px"></i>
+   <!-- <span id="sendMessage"><i class="fa fa-send" style="font-size:20px"></i> -->
     <!-- <input type="submit"  (ngModel)="UserModel.ChatContent" id="sendMessage" style="display:none"  onClick="f()"> -->
 
 
-<button type="submit" value="Submit" id="sendMessage" >Submit</button>
+<button type="submit" value="Submit" class="btn btn-primary"  onclick="document.getElementById('chatMessage').value = '';document.getElementById('chatHidden').style.display='none';" id="sendMessage" >Send</button>
 
 <!-- (click)="f()" -->
-   </span>
+   <!-- </span> -->
 
 </form>
 
@@ -75,11 +77,12 @@
     </form>
 </div> -->
 
-<script>
+<!-- <script type="text/javascript">
+$('myForm').val('')
 
 $('#closeSymbol #container').hide();
 
-</script>
+</script> -->
 
 
 </body>

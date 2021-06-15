@@ -1,9 +1,9 @@
 export class User{
 
     chatMessage!: String;
-    invoiceNumber :String="1235";
+    invoiceNumber :String="113";
     documentFile!:File;
-
+    isApprover:boolean=true;
   
       
 }
